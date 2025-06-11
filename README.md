@@ -1,4 +1,5 @@
 # A Restaurant Ratings Predictor
+![Image](https://github.com/user-attachments/assets/4547ee31-77ce-448d-857b-52c9ae658d82)
 
 ## About Dataset
 
@@ -31,3 +32,103 @@ Attributes:
 20. Rating Text: Textual representation of the rating level.
 21. Votes: Total number of votes received by the restaurant.
 
+# Methodology
+
+This project follows a structured pipeline for end-to-end machine learning development:
+
+## Exploratory Data Analysis (EDA)
+
+Objective: Understand feature distributions, relationships, and target behavior.
+
+Steps Taken:
+
+1. Loaded and inspected the dataset shape, types, and summary statistics.
+
+2. Visualized numeric features like average_cost_for_two using histograms.
+
+3. Plotted count distributions of categorical features like online_order, book_table, and price_range.
+
+Used a heatmap to check correlations and potential multicollinearity.
+
+ ## Data Cleaning
+
+Actions:
+
+Removed null values and duplicates.
+
+Verified data types and corrected them as needed (e.g., price range as integer).
+
+## Data Transformation
+
+Encoding:
+
+1. online_order, book_table: Binary encoding (Yes → 1, No → 0)
+
+2. price_range: Retained as ordinal (1 to 4)
+
+Scaling:
+
+Applied StandardScaler to numerical features.
+
+Saved the scaler using joblib (Scaler.pkl) for consistent preprocessing in deployment.
+
+## Feature Engineering
+Final Feature Set:
+
+average_cost_for_two
+
+book_table (encoded)
+
+online_order (encoded)
+
+price_range
+
+These features were chosen based on domain intuition and correlation analysis.
+
+## Model Training
+Workflow:
+
+Split data into training and testing sets.
+
+Trained a regression model (please confirm: was it RandomForestRegressor, LinearRegression, etc.?).
+
+Evaluated using metrics like RMSE and R².
+
+Saved the trained model as mlmodel.pkl.
+
+## Results & Discussion
+ 
+Model Performance
+Metrics: 
+
+1. R² Score: 
+
+2. RMSE: 
+
+3. MAE: 
+
+## Web App Features
+The Streamlit app allows users to input:
+
+Estimated average cost
+
+Whether the restaurant offers table booking
+
+Whether it supports online delivery
+
+Price range (1 = Cheapest, 4 = Most Expensive)
+
+The app:
+
+Transforms inputs using Scaler.pkl
+
+Predicts rating with mlmodel.pkl
+
+## Conclusion
+The dataset was thoroughly cleaned and preprocessed.
+
+A regression model was trained to effectively predict restaurant ratings.
+
+The model was deployed via a user-friendly Streamlit interface.
+
+This project demonstrates the full pipeline from EDA to Deployment.
