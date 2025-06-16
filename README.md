@@ -90,9 +90,9 @@ Workflow:
 
 Split data into training and testing sets.
 
-Trained a regression model (please confirm: was it RandomForestRegressor, LinearRegression, etc.?).
+Trained a regression model (RandomForestRegressor, LinearRegression, DecisionTreeRegressor, KNN, AdaBoost)
 
-Evaluated using metrics like RMSE and R².
+Evaluated using metrics like RMSE and MAE
 
 Saved the trained model as mlmodel.pkl.
 
@@ -101,11 +101,9 @@ Saved the trained model as mlmodel.pkl.
 Model Performance
 Metrics: 
 
-1. R² Score: 
+1. RMSE: 
 
-2. RMSE: 
-
-3. MAE: 
+2. MAE: 
 
 ## Web App Features
 The Streamlit app allows users to input:
